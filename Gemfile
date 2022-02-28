@@ -48,3 +48,5 @@ end
 
 gem "http"
 
+gem "jwt"
+
