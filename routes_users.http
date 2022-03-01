@@ -1,21 +1,45 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDYxNzQ1NzV9.DE5_u2yGLy9pAMp0vDwvcr-Xznuh9CURABnnyuK1y8o
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNjQ2MjM5NzIwfQ.4pTxmiedOq0ogzKuhC60PrgoPFmEAbaCT7aTgX-SnRg
 
-### Users create (signup)
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "name": "Corrie",
-  "email": "corrie@gmail.com",
-  "password": "password",
-  "password_confirmation": "password"
-}
-
-### Sessions create (login)
+### Sessions Create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "corrie@gmail.com",
+  "email": "testtest@gmail.com",
   "password": "password"
 }
+
+### Users Create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Test email",
+  "email": "test@gmail.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Users Show
+GET http://localhost:3000/users/13
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+### Users Update
+PATCH http://localhost:3000/users/13
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+{
+  "name": "Test Test OKAY!",
+  "email": "corrie@gmail.com",
+  "image": "https://pbs.twimg.com/profile_images/1009548186086756353/c-heXTFI_400x400.jpg",
+  "location": "THE INTERNET",
+  "about": "Should not be able to update this",
+  "twitter": "@testest"
+
+}
+
+### Users Destroy
+
+DELETE http://localhost:3000/users/12
