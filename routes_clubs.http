@@ -1,0 +1,31 @@
+@jwt = TBD
+
+### Clubs Index
+GET http://localhost:3000/clubs
+
+### Clubs Create
+POST http://localhost:3000/clubs
+Content-Type: application/json
+
+{
+  "name": "Test Group",
+  "isbn": "9780307387387",
+  "work_id": 40773,
+  "is_active": true
+}
+
+### Clubs Show
+
+GET http://localhost:3000/clubs/8
+
+### Clubs Update
+
+PATCH http://localhost:3000/clubs/8
+Content-Type: application/json
+
+{
+  "name": "Karen's Book Klub",
+  "is_active": true
+}
+
+###
