@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post "/sessions" => "sessions#create"
+
   post "/users" => "users#create"
   get "/users/:id" => "users#show"
   patch "/users/:id" => "users#update"
@@ -9,6 +11,11 @@ Rails.application.routes.draw do
   get "/clubs/:id" => "clubs#show"
   patch "/clubs/:id" => "clubs#update"
 
-  post "/sessions" => "sessions#create"
+  post "/memberships" => "memberships#create"
+  delete "/memberships/:id" => "memberships#destroy"
  
+  post "/messages" => "messages#create"
+  patch "/messages/:id" => "messages#update"
+  delete "/messages/:id" => "messages#destroy"
+
 end
