@@ -1,4 +1,5 @@
-@jwt = TBD
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzI1NjQxfQ.4J9HK21ISRnr9MNdONJpT8KxdBdfrzv57154F86VdBc
+#Corrie signed in (11)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
@@ -6,9 +7,10 @@ GET http://localhost:3000/clubs
 ### Clubs Create
 POST http://localhost:3000/clubs
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Test Group",
+  "name": "New Club!",
   "isbn": "9780307387387",
   "work_id": 40773,
   "is_active": true
