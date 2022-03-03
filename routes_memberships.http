@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzI1NjQxfQ.4J9HK21ISRnr9MNdONJpT8KxdBdfrzv57154F86VdBc
-#Corrie signed in (11)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDYzNDUyMjJ9.Fro50m57pQu_W9QVHyEA_wFBM5zhbIVni7raAnbJb14
+#Karen logged in (user 1)
 
 ### Membership Create
 POST http://localhost:3000/memberships/
@@ -7,7 +7,7 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "club_id": 7
+  "club_id": 8
 }
 
 ### Membership Destroy

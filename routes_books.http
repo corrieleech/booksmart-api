@@ -1,0 +1,30 @@
+###
+#Books Index
+GET http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title_search": "blue+nights"
+}
+
+###
+#Book Get Work ID
+
+GET http://localhost:3000/books/work_id
+Content-Type: application/json
+
+{
+  "work_id": "40773"
+}
+
+###
+#Books Discussion
+
+GET http://localhost:3000/books/discussion
+Content-Type: application/json
+
+{
+  "isbn": "9780307387387"
+}
+
+###

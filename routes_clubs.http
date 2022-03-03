@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzI1NjQxfQ.4J9HK21ISRnr9MNdONJpT8KxdBdfrzv57154F86VdBc
-#Corrie signed in (11)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzQ1Njk5fQ.7sYWgmaPRuXS0YauCVtPGnLCJH8as2icawvBj6lh2cU
+#Corrie logged in (user 11)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
@@ -9,13 +9,6 @@ POST http://localhost:3000/clubs
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
-{
-  "name": "New Club!",
-  "isbn": "9780307387387",
-  "work_id": 40773,
-  "is_active": true
-}
-
 ### Clubs Show
 
 GET http://localhost:3000/clubs/8
@@ -24,9 +17,10 @@ GET http://localhost:3000/clubs/8
 
 PATCH http://localhost:3000/clubs/8
 Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Karen's Book Klub",
+  "name": "Karen's Book Klub!!!!!!!!",
   "is_active": true
 }
 

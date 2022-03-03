@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNjQ2MzI0Mzk0fQ.V731oNInV0Ehxb9N1EkMvdgxonLC7m-NvwnjPinRe7c
-#Test test 
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzQ1Njk5fQ.7sYWgmaPRuXS0YauCVtPGnLCJH8as2icawvBj6lh2cU
+#Corrie (user 11)
 
 ### Sessions Create (login)
 POST http://localhost:3000/sessions
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### Users Show
-GET http://localhost:3000/users/13
+GET http://localhost:3000/users/11
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
