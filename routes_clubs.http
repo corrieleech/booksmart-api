@@ -9,6 +9,11 @@ POST http://localhost:3000/clubs
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
+{
+  "title": "In Five Years",
+  "name": "Testy Mc test Again"
+}
+
 ### Clubs Show
 
 GET http://localhost:3000/clubs/8
