@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
-#Betty (user_id: 14)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY1MTY1NjB9.H0BZhnnBdZUr_hv535B7r34vAZkmcNHZ_cYbPRqMI88
+#Christina (user_id: 6)
 
 ### Messages Create
 POST http://localhost:3000/messages/
@@ -7,18 +7,18 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "club_id": 17,
-  "body": "This is a message from beyond the grave.",
-  "category": "informal"
+  "club_id": 19,
+  "body": "Question 2: This is a quintessentially American book because...",
+  "category": "formal"
 }
 
 ### Messages Update
-PATCH http://localhost:3000/messages/29
+PATCH http://localhost:3000/messages/31
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "body": "This is a message from beyond the grave **scary music plays**",
+  "body": "Question 2: This is a quintessentially American book because of the way that Steinbeck uses...",
   "category": "informal"
 }
 

@@ -1,31 +1,8 @@
 ###
-#Books Index - Search Titles for Work Ids
+#Books Index - Search Available Titles in API 
 GET http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "title_search": "between two kingdoms"
+  "title_search": "tiger's wife"
 }
-
-###
-#Books Show - Get data (ISBN) about a specific work if it has a reading guide (books without a reading guide return null). API Endpoint and code in controller also is used to pull basic book info for Clubs serializer.
-#Good tests - Search for "sea" and 292302 has reading guide, 178065 does not.
-
-GET http://localhost:3000/books/work_id
-Content-Type: application/json
-
-{
-  "work_id": "318403"
-}
-
-###
-#Books Get Discussion Questions of Search Title Chosen
-
-GET http://localhost:3000/books/discussion
-Content-Type: application/json
-
-{
-  "isbn": "9780141186160"
-}
-
-###

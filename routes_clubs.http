@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
-#Betty (user_id: 14)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY1MTY1NjB9.H0BZhnnBdZUr_hv535B7r34vAZkmcNHZ_cYbPRqMI88
+#Christina (user_id: 6)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
@@ -10,25 +10,24 @@ GET http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "title_search": "sin in the second city"
+  "title_search": "east of eden"
 }
 
 ### Clubs Create
-#Currently assuming we already have the work ID through Books Index
-#Good tests - Search for "sea" and 292302 has reading guide, 178065 does not.
+#Note: ISBN comes through params after user runs Book Index on frontend
 
 POST http://localhost:3000/clubs
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "work_id": "137",
-  "name": "Riding the Second Wave"
+  "isbn": "9780142004234",
+  "name": "East V West"
 }
 
 ### Clubs Show
 
-GET http://localhost:3000/clubs/6
+GET http://localhost:3000/clubs/17
 
 ### Clubs Update
 

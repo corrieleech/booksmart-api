@@ -24,8 +24,8 @@ class Club < ApplicationRecord
   def discussion_questions
     api_key = Rails.application.credentials.rh_api
     response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/titles/#{isbn}/content?api_key=#{api_key}")
-    book_data = response.parse(:json)["data"]["content"]
-    return book_data
+    detailed_book_data = response.parse(:json)["data"]["content"]
+    return detailed_book_data
   end
 
 end

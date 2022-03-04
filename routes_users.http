@@ -1,12 +1,12 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
-#Betty (user_id: 14)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY1MTY1NjB9.H0BZhnnBdZUr_hv535B7r34vAZkmcNHZ_cYbPRqMI88
+#Christina (user_id: 6)
 
 ### Sessions Create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "betty@gmail.com",
+  "email": "christina@gmail.com",
   "password": "password"
 }
 
@@ -22,23 +22,17 @@ Content-Type: application/json
 }
 
 ### Users Show
-GET http://localhost:3000/users/14
+GET http://localhost:3000/users/6
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 ### Users Update
-PATCH http://localhost:3000/users/14
+PATCH http://localhost:3000/users/6
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Betty Friedan",
-  "email": "betty@gmail.com",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Betty_Friedan_1960.jpg",
-  "location": "NYC",
-  "about": "Journalist, activist, and co-founder of the National Organization for Women",
-  "twitter": "@problemthathasnoname"
-
+  "image": "https://live.staticflickr.com/3760/9692580947_9659045143.jpg"
 }
 
 ### Users Destroy
