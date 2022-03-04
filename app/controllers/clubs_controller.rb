@@ -7,41 +7,31 @@ class ClubsController < ApplicationController
   end
 
   def create
-    #Convert search terms into correct format for Random House API
-    title_search = (params[:title]).gsub!(" ","+")
-    
-    #Search for title from params
+    #Use work_id from book index selection to confirm if book has discussion guide
     api = Rails.application.credentials.rh_api
-    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search?q=#{title_search}&api_key=#{api}")
-    work_id = response.parse(:json)["data"]["results"][1]["key"]
-    render json: work_id
+    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/works/#{params[:work_id]}/titles?showReadingGuides=true&api_key=#{api}")
+    # isbn = response.parse(:json)["data"]["titles"][0]["isbn"]
 
-    #Use work_id to confirm if book has discussion guide
-
-    # response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/works/#{work_id}/titles?showReadingGuides=true&api_key=#{api}")
-    # # isbn = response.parse(:json)["data"]["titles"][0]["isbn"]
-
-    # render json: response 
-
-    # if isbn
-    #   club = Club.new(
-    #     name: params[:name],
-    #     isbn: isbn,
-    #     work_id: work_id,
-    #     is_active: true
-    #   )
-    #   if club.save
-    #     membership = Membership.create(
-    #       user_id: current_user.id, 
-    #       club_id: club.id
-    #     )
-    #     render json: club
-    #   else
-    #     render json: {errors: club.errors.full_messages}, status: :unprocessable_entity 
-    #   end
-    # else
-    #   render json: {message: "Pick a new book."}
-    # end
+    if response.parse(:json)["code"] == 404
+      render json: {message: "Book currently does not have a corresponding discussion guide to populate discussion forum. Please choose another book."}
+    else
+      isbn = response.parse(:json)["data"]["titles"][0]["isbn"]
+      club = Club.new(
+        name: params[:name],
+        isbn: isbn,
+        work_id: params[:work_id],
+        is_active: true
+      )
+      if club.save
+        membership = Membership.create(
+          user_id: current_user.id, 
+          club_id: club.id
+        )
+        render json: club
+      else
+        render json: {errors: club.errors.full_messages}, status: :unprocessable_entity 
+      end
+    end
   end
 
   def show

@@ -1,26 +1,38 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzQ1Njk5fQ.7sYWgmaPRuXS0YauCVtPGnLCJH8as2icawvBj6lh2cU
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2NDkxNDExfQ.KwGbuwweVoQRXZWKc5i6pqBS6dTpfCZguaxH4iuS5C0
 #Corrie logged in (user 11)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
 
+###
+#Books Index - Search Titles for Work Ids
+GET http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title_search": "family"
+}
+
 ### Clubs Create
+#Currently assuming we already have the work ID through Books Index
+#Good tests - Search for "sea" and 292302 has reading guide, 178065 does not.
+
 POST http://localhost:3000/clubs
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "title": "In Five Years",
-  "name": "Testy Mc test Again"
+  "work_id": "31572",
+  "name": "All in the Family"
 }
 
 ### Clubs Show
 
-GET http://localhost:3000/clubs/8
+GET http://localhost:3000/clubs/6
 
 ### Clubs Update
 
-PATCH http://localhost:3000/clubs/8
+PATCH http://localhost:3000/clubs/10
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 

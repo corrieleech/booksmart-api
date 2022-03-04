@@ -4,9 +4,27 @@ class BooksController < ApplicationController
 
   def index
     api = Rails.application.credentials.rh_api
-    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search?q=#{params[:title_search]}&api_key=#{api}")
+
+    # title_search = (params[:title_search]).gsub!(" ","+")
+    #leaving this here for tonight, but need to figure out why modifying the search makes it get all weird (e.g., "help")
     
-    render json: response.parse(:json)["data"]["results"]
+    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search?q=#{params[:title_search]}&docType=work&api_key=#{api}")
+    book_data = response.parse(:json)["data"]["results"]
+    book_array = []
+    book_data.each { |book| 
+      if book["author"]
+        author = book["author"][0].tr("0-9", "").tr("|", "")
+      else
+        author = "N/A"
+      end
+      possibility = { title: book["name"],
+        author: author,
+        work_id: book["key"]
+      }
+      book_array << possibility
+      }
+    render json: book_array
+    # render json: response.parse(:json)["data"]["results"]
   end
   
   #Show = List work titles for a book that have reading guides
