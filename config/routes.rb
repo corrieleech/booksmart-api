@@ -19,6 +19,4 @@ Rails.application.routes.draw do
   delete "/messages/:id" => "messages#destroy"
 
   get "/books" => "books#index"
-  get "/books/work_id" => "books#show"
-  get "/books/discussion" => "books#discussion"
 end

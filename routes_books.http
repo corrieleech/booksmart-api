@@ -4,7 +4,7 @@ GET http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "title_search": "spider"
+  "title_search": "between two kingdoms"
 }
 
 ###
