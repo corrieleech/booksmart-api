@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzI1NjQxfQ.4J9HK21ISRnr9MNdONJpT8KxdBdfrzv57154F86VdBc
-#Corrie signed in (11)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
+#Betty (user_id: 14)
 
 ### Messages Create
 POST http://localhost:3000/messages/
@@ -7,23 +7,23 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "club_id": 7,
-  "body": "This is test test's message.",
+  "club_id": 17,
+  "body": "This is a message from beyond the grave.",
   "category": "informal"
 }
 
 ### Messages Update
-PATCH http://localhost:3000/messages/1
+PATCH http://localhost:3000/messages/29
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "body": "This should not work.",
+  "body": "This is a message from beyond the grave **scary music plays**",
   "category": "informal"
 }
 
 ### Messages Destroy
 
-DELETE http://localhost:3000/messages/2
+DELETE http://localhost:3000/messages/28
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}

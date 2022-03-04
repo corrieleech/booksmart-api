@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDYzNDUyMjJ9.Fro50m57pQu_W9QVHyEA_wFBM5zhbIVni7raAnbJb14
-#Karen logged in (user 1)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
+#Betty (user_id: 14)
 
 ### Membership Create
 POST http://localhost:3000/memberships/
@@ -12,6 +12,6 @@ Authorization: Bearer {{ jwt }}
 
 ### Membership Destroy
 
-DELETE http://localhost:3000/memberships/25
+DELETE http://localhost:3000/memberships/36
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}

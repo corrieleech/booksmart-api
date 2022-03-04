@@ -10,7 +10,6 @@ class ClubsController < ApplicationController
     #Use work_id from book index selection to confirm if book has discussion guide
     api = Rails.application.credentials.rh_api
     response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/works/#{params[:work_id]}/titles?showReadingGuides=true&api_key=#{api}")
-    # isbn = response.parse(:json)["data"]["titles"][0]["isbn"]
 
     if response.parse(:json)["code"] == 404
       render json: {message: "Book currently does not have a corresponding discussion guide to populate discussion forum. Please choose another book."}

@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2NDkxNDExfQ.KwGbuwweVoQRXZWKc5i6pqBS6dTpfCZguaxH4iuS5C0
-#Corrie logged in (user 11)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
+#Betty (user_id: 14)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
@@ -10,7 +10,7 @@ GET http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "title_search": "family"
+  "title_search": "sin in the second city"
 }
 
 ### Clubs Create
@@ -22,8 +22,8 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "work_id": "31572",
-  "name": "All in the Family"
+  "work_id": "137",
+  "name": "Riding the Second Wave"
 }
 
 ### Clubs Show
@@ -32,12 +32,12 @@ GET http://localhost:3000/clubs/6
 
 ### Clubs Update
 
-PATCH http://localhost:3000/clubs/10
+PATCH http://localhost:3000/clubs/17
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Karen's Book Klub!!!!!!!!",
+  "name": "Riding the Second Wave",
   "is_active": true
 }
 

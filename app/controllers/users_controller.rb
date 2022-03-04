@@ -34,19 +34,23 @@ class UsersController < ApplicationController
       user.about = params[:about] || current_user.about
       user.twitter = params[:twitter] || current_user.twitter
       if user.save
-        render json: {message: "#{user.name}'s profile has been updated.", profile: user, status: :ok}
+        render json: {message: "#{user.name}'s profile has been updated.", profile: user}, status: :ok
       else
-        render json: {errors: user.errors.full_messages, status: :unprocessable_entity }
+        render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
       end
     else 
-      render json: {errors: user.errors.full_messages, status: :bad_request }
+      render json: {errors: user.errors.full_messages}, status: :unauthorized
     end
   end
 
   def destroy
     user = User.find(params[:id])
-    user.destroy
-    render json: {message: "User has been removed from the database."}
+    if current_user == user
+      user.destroy
+      render json: {message: "User has been removed from the database."}
+    else
+      render json: {}, status: :unauthorized
+    end
   end
   
 end

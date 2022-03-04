@@ -1,12 +1,12 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjQ2MzQ1Njk5fQ.7sYWgmaPRuXS0YauCVtPGnLCJH8as2icawvBj6lh2cU
-#Corrie (user 11)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NTAyNjgzfQ.nZHaJSf67Of29bwkKFcm0e_kskaa_Ui1Pu05I-UsN4k
+#Betty (user_id: 14)
 
 ### Sessions Create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "corrie@gmail.com",
+  "email": "betty@gmail.com",
   "password": "password"
 }
 
@@ -15,32 +15,34 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Test email",
-  "email": "test@gmail.com",
+  "name": "Betty Friedan",
+  "email": "betty@gmail.com",
   "password": "password",
   "password_confirmation": "password"
 }
 
 ### Users Show
-GET http://localhost:3000/users/11
+GET http://localhost:3000/users/14
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 ### Users Update
-PATCH http://localhost:3000/users/13
+PATCH http://localhost:3000/users/14
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Test Test OKAY!",
-  "email": "corrie@gmail.com",
-  "image": "https://pbs.twimg.com/profile_images/1009548186086756353/c-heXTFI_400x400.jpg",
-  "location": "THE INTERNET",
-  "about": "Should not be able to update this",
-  "twitter": "@testest"
+  "name": "Betty Friedan",
+  "email": "betty@gmail.com",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Betty_Friedan_1960.jpg",
+  "location": "NYC",
+  "about": "Journalist, activist, and co-founder of the National Organization for Women",
+  "twitter": "@problemthathasnoname"
 
 }
 
 ### Users Destroy
 
-DELETE http://localhost:3000/users/12
+DELETE http://localhost:3000/users/11
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}

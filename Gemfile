@@ -51,3 +51,5 @@ gem "http"
 gem "jwt"
 
 gem 'active_model_serializers', '~> 0.10.2'
+
+gem "seed_dump"
