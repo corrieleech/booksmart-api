@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY1MTY1NjB9.H0BZhnnBdZUr_hv535B7r34vAZkmcNHZ_cYbPRqMI88
-#Christina (user_id: 6)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NjgyMDMzfQ.1Bbpo06N4OmqhZmQLzjjTzmil0PGTjFXE7abMiaGnks
+#Betty (user_id: 14)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
@@ -10,7 +10,7 @@ GET http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "title_search": "east of eden"
+  "title_search": "the woman who"
 }
 
 ### Clubs Create
@@ -21,22 +21,23 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "isbn": "9780142004234",
-  "name": "East V West"
+  "isbn": "9780767930512",
+  "name": "Feminist Book Club"
 }
 
 ### Clubs Show
 
-GET http://localhost:3000/clubs/17
+GET http://localhost:3000/clubs/1
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
 
 ### Clubs Update
 
-PATCH http://localhost:3000/clubs/17
+PATCH http://localhost:3000/clubs/5
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Riding the Second Wave",
   "is_active": true
 }
 

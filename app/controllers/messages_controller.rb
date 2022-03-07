@@ -24,7 +24,6 @@ class MessagesController < ApplicationController
     message = Message.find(params[:id])
     if message.user == current_user
       message.body = params[:body] || message.body
-      message.category = params[:category] || message.category
       if message.save
         render json: message
       else

@@ -1,12 +1,12 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY1MTY1NjB9.H0BZhnnBdZUr_hv535B7r34vAZkmcNHZ_cYbPRqMI88
-#Christina (user_id: 6)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NjgyMDMzfQ.1Bbpo06N4OmqhZmQLzjjTzmil0PGTjFXE7abMiaGnks
+#Betty (user_id: 14)
 
 ### Sessions Create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "christina@gmail.com",
+  "email": "betty@gmail.com",
   "password": "password"
 }
 
@@ -15,28 +15,28 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Betty Friedan",
-  "email": "betty@gmail.com",
+  "name": "Dani",
+  "email": "dani@gmail.com",
   "password": "password",
   "password_confirmation": "password"
 }
 
 ### Users Show
-GET http://localhost:3000/users/6
+GET http://localhost:3000/users/14
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 ### Users Update
-PATCH http://localhost:3000/users/6
+PATCH http://localhost:3000/users/5
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "image": "https://live.staticflickr.com/3760/9692580947_9659045143.jpg"
+  "name": "Gayle Sheer"
 }
 
 ### Users Destroy
 
-DELETE http://localhost:3000/users/11
+DELETE http://localhost:3000/users/15
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}

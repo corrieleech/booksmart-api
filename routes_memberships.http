@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY1MTY1NjB9.H0BZhnnBdZUr_hv535B7r34vAZkmcNHZ_cYbPRqMI88
-#Christina (user_id: 6)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NjgyMDMzfQ.1Bbpo06N4OmqhZmQLzjjTzmil0PGTjFXE7abMiaGnks
+#Betty (user_id: 14)
 
 ### Membership Create
 POST http://localhost:3000/memberships/
@@ -7,11 +7,11 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "club_id": 17
+  "club_id": 4
 }
 
 ### Membership Destroy
 
-DELETE http://localhost:3000/memberships/36
+DELETE http://localhost:3000/memberships/44
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}

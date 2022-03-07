@@ -2,8 +2,8 @@ class ClubsController < ApplicationController
   before_action :authenticate_user, only: [:create, :update]
 
   def index
-    clubs = Club.all
-    render json: clubs
+    clubs = Club.where(is_active: true)
+    render json: clubs, include: []
   end
 
   def create
@@ -17,7 +17,7 @@ class ClubsController < ApplicationController
         user_id: current_user.id, 
         club_id: club.id
       )
-      render json: club, status: :created
+      render json: club, include: []
     else
       render json: {errors: club.errors.full_messages}, status: :unprocessable_entity 
     end
@@ -25,7 +25,7 @@ class ClubsController < ApplicationController
 
   def show
     club = Club.find(params[:id])
-    render json: club
+    render json: club, include: ["memberships.user"]
   end
 
   def update
