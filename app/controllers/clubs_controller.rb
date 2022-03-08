@@ -3,7 +3,7 @@ class ClubsController < ApplicationController
 
   def index
     clubs = Club.where(is_active: true)
-    render json: clubs, fields: [:id, :name, :work_id, :isbn, :is_active, :book]
+    render json: clubs, fields: [:id, :name, :work_id, :isbn, :is_active, :book], include: []
   end
 
   def create
@@ -25,7 +25,7 @@ class ClubsController < ApplicationController
 
   def show
     club = Club.find(params[:id])
-    render json: club, include: ["memberships.user"]
+    render json: club, include: 'memberships.user'
   end
 
   def update
