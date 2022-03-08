@@ -1,5 +1,5 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NjgyMDMzfQ.1Bbpo06N4OmqhZmQLzjjTzmil0PGTjFXE7abMiaGnks
-#Betty (user_id: 14)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NDY3ODg4MjJ9.ld_J2bamG2FoCRlO0Dx_Gzk3wQkMwAvd5kUOkeVwNcY
+#Christina (user_id: 6)
 
 ### Clubs Index
 GET http://localhost:3000/clubs
@@ -27,7 +27,7 @@ Authorization: Bearer {{ jwt }}
 
 ### Clubs Show
 
-GET http://localhost:3000/clubs/1
+GET http://localhost:3000/clubs/5
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 

@@ -1,6 +1,6 @@
 class ClubSerializer < ActiveModel::Serializer
-  attributes :id, :name, :work_id, :isbn, :is_active, :book
-  
+  attributes :id, :name, :work_id, :isbn, :is_active, :book, :details
+
   attribute :is_member?, if: :current_user
   attribute :messages, if: :current_user
   attribute :memberships, if: :current_user
@@ -10,4 +10,3 @@ class ClubSerializer < ActiveModel::Serializer
   end
 
 end
-

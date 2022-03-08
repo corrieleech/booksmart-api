@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NjgyMDMzfQ.1Bbpo06N4OmqhZmQLzjjTzmil0PGTjFXE7abMiaGnks
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2Nzc3MzY5fQ.LXBb-63ZmXKsFzNtUkTk5Tgd034qEwXLuYostCEV46k
 #Betty (user_id: 14)
 
 ### Sessions Create (login)
@@ -6,7 +6,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "betty@gmail.com",
+  "email": "christina@gmail.com",
   "password": "password"
 }
 
