@@ -1,12 +1,12 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2Nzc3MzY5fQ.LXBb-63ZmXKsFzNtUkTk5Tgd034qEwXLuYostCEV46k
-#Betty (user_id: 14)
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDcwNDAwMTR9.4NK9Pf7MfY6hCddAr06sbwMn-mlRxIvWvJmG_RKZ1RA
+#Karen (user_id: 1)
 
 ### Sessions Create (login)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "christina@gmail.com",
+  "email": "karen@aol.com",
   "password": "password"
 }
 
@@ -22,17 +22,17 @@ Content-Type: application/json
 }
 
 ### Users Show
-GET http://localhost:3000/users/14
+GET http://localhost:3000/users/1
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 ### Users Update
-PATCH http://localhost:3000/users/5
+PATCH http://localhost:3000/users/6
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Gayle Sheer"
+  "name": "Christina Donley"
 }
 
 ### Users Destroy

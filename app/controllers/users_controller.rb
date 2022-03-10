@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       user.about = params[:about] || current_user.about
       user.twitter = params[:twitter] || current_user.twitter
       if user.save
-        render json: user, status: :ok
+        render json: user, include: [], status: :ok
       else
         render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
       end
