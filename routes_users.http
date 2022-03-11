@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDcwNDAwMTR9.4NK9Pf7MfY6hCddAr06sbwMn-mlRxIvWvJmG_RKZ1RA
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDcwOTU5Mzl9.vqlpjkoOPTEK7BdHxZNwiNdnJ0aWNhmvHkwkaN2w71k
 #Karen (user_id: 1)
 
 ### Sessions Create (login)
@@ -27,12 +27,12 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 ### Users Update
-PATCH http://localhost:3000/users/6
+PATCH http://localhost:3000/users/1
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Christina Donley"
+  "image": "https://i.pinimg.com/originals/12/89/69/1289690a3bda60315b5fc8bad1a398f5.jpg"
 }
 
 ### Users Destroy
