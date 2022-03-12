@@ -22,4 +22,5 @@ class MembershipsController < ApplicationController
       render json: {}, status: :unauthorized
     end
   end
+
 end

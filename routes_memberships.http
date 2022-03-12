@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNjQ2NjgyMDMzfQ.1Bbpo06N4OmqhZmQLzjjTzmil0PGTjFXE7abMiaGnks
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDcyMDU0MTd9.tQLZrZK0g7360q5T8cwe0SM9GF2vO4cUl4f1Ak-O9Qs
 #Betty (user_id: 14)
 
 ### Membership Create
@@ -12,6 +12,6 @@ Authorization: Bearer {{ jwt }}
 
 ### Membership Destroy
 
-DELETE http://localhost:3000/memberships/44
+DELETE http://localhost:3000/memberships/55
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
