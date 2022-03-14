@@ -3,4 +3,5 @@ class MessageSerializer < ActiveModel::Serializer
 
   belongs_to :user
   belongs_to :updated_at
+
 end

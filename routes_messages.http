@@ -25,4 +25,4 @@ Authorization: Bearer {{ jwt }}
 
 DELETE http://localhost:3000/messages/32
 Content-Type: application/json
-Authorization: Bearer {{ jwt }}
+Authorization: Bearer {{ jwt }} 

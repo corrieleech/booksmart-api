@@ -17,11 +17,7 @@ class UsersController < ApplicationController
   
   def show
     user = User.find(params[:id])
-    if current_user == user 
-      render json: user
-    else
-      render json: {}, status: :unauthorized
-    end
+    render json: user
   end
 
   def update

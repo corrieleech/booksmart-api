@@ -25,7 +25,7 @@ class ClubsController < ApplicationController
 
   def show
     club = Club.find(params[:id])
-    render json: club, include: ['memberships.user', 'messages', 'book', 'details', 'messages.updated_at']
+    render json: club, include: ['memberships.user', 'messages', 'book', 'details', 'messages.updated_at', "messages.user"]
   end
 
   def update
