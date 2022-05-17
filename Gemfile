@@ -52,4 +52,9 @@ gem "jwt"
 
 gem 'active_model_serializers', '~> 0.10.2'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
+end
+
 gem "seed_dump"
+
