@@ -19,15 +19,15 @@ class BooksController < ApplicationController
   # end
 
   def index
-      api_key = Rails.application.credentials.rh_api
+    api_key = Rails.application.credentials.rh_api
 
-      title_search = (params[:title_search]).gsub!(" ","+")
+    title_search = (params[:title_search]).gsub!(" ","+")
 
-      response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search/views/search-display?q=#{params[:title_search]}&api_key=#{api_key}")
+    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search/views/search-display?q=#{params[:title_search]}&api_key=#{api_key}")
 
-      all_books = response.parse(:json)["data"]["results"]
+    all_books = response.parse(:json)["data"]["results"]
 
-      render json: all_books
+    render json: all_books
   end
 
 end
