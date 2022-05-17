@@ -23,7 +23,7 @@ class BooksController < ApplicationController
 
     title_search = (params[:title_search]).gsub!(" ","+")
 
-    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search/views/search-display?q=#{params[:title_search]}&api_key=#{api_key}")
+    response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/search/views/search-display?q=#{params[:title_search]}&docType=work&api_key=#{api_key}")
 
     all_books = response.parse(:json)["data"]["results"]
 
