@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: booksmart_api_production
-  username: booksmart_api
-  password: <%= ENV["BOOKSMART_API_DATABASE_PASSWORD"] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  # username: booksmart_api
+  # password: <%= ENV["BOOKSMART_API_DATABASE_PASSWORD"] %>
