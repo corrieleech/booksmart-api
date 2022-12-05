@@ -7,6 +7,7 @@ class Club < ApplicationRecord
     Rails.cache.fetch([self, :book], expires_in: 1.day) do
     api_key = Rails.application.credentials.rh_api
     response = HTTP.get("https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.US/titles/#{isbn}?&api_key=#{api_key}")
+    return unless response.status == 200
     book_data = response.parse(:json)["data"]["titles"][0]
     {
       title: book_data["title"],
